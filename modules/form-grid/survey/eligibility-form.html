@@ -5,14 +5,22 @@
                 <div id=S1__ID>
                     <div class="formgroup">
                         <div class="questiongroup ">
+                            <fieldset class="">
+                                <span class="question">1. What is your age?</span>
+                                <input class="formcontrol" type="number" min="35" max="65" name="age" placeholder="" required />
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="formgroup">
+                        <div class="questiongroup ">
                             <span class="question">&nbsp;</span>
                             <fieldset class="">
                                 <div class="">
-                                    <span class="question">1. I am 18 years of age or older.</span><br>
-                                    <input id="age18_1__ID" name="age18" type="radio" value="1" required>
-                                    <label class="rd_btn" for="age18_1__ID">Yes</label>
-                                    <input id="age18_2__ID" name="age18" type="radio" value="0">
-                                    <label class="rd_btn" for="age18_2__ID">No</label>
+                                    <span class="question">2. Are you fluent in english?</span><br>
+                                    <input id="fluent_english_1__ID" name="fluent_english" type="radio" value="1" required>
+                                    <label class="rd_btn" for="fluent_english_1__ID">Yes</label>
+                                    <input id="fluent_english_2__ID" name="fluent_english" type="radio" value="0">
+                                    <label class="rd_btn" for="fluent_english_2__ID">No</label>
                                 </div>
                             </fieldset>
                         </div>
@@ -22,14 +30,38 @@
                             <span class="question">&nbsp;</span>
                             <fieldset class="">
                                 <div class="">
-                                    <span class="question">2. I have pain in the lower back region which has been
-                                        occurring for at least 3 months.</span><br>
-                                    <input id="pain_1__ID" name="pain" type="radio" value="1" required>
-                                    <label class="rd_btn" for="pain_1__ID">Yes</label>
-                                    <input id="pain_2__ID" name="pain" type="radio" value="0">
-                                    <label class="rd_btn" for="pain_2__ID">No</label>
+                                    <span class="question">
+                                             3. Are you currently using a CPAP machine for Obstructive Sleep Apnoea (OSA)?</span>
+                                    <input id="cpap_1__ID" name="cpap" type="radio" value="1" required>
+                                    <label class="rd_btn" for="cpap_1__ID">Yes</label>
+                                    <input id="cpap_2__ID" name="cpap" type="radio" value="0">
+                                    <label class="rd_btn" for="cpap_2__ID">No</label>
                                 </div>
                             </fieldset>
+                        </div>
+                    </div>
+                    <div id="S1_3a__ID">
+                        <div class="formgroup">
+                            <div class="questiongroup ">
+                                <span class="question">&nbsp;</span>
+                                <fieldset class="">
+                                    <div class="">
+                                        <span class="question">a. If yes how many hrs/night </span><br>
+                                        <input id="cpap_hrs_1__ID" name="cpap_hrs" type="radio"
+                                            value="0-2" required>
+                                        <label class="rd_btn" for="cpap_hrs_1__ID">0-2hrs/night</label>
+                                        <input id="cpap_hrs_2__ID" name="cpap_hrs" type="radio"
+                                            value="2-4">
+                                        <label class="rd_btn" for="cpap_hrs_2__ID">2-4hrs/night</label>
+                                        <input id="cpap_hrs_3__ID" name="cpap_hrs" type="radio"
+                                            value="4-6">
+                                        <label class="rd_btn" for="cpap_hrs_3__ID">4-6hrs/night</label>
+                                        <input id="cpap_hrs_4__ID" name="cpap_hrs" type="radio"
+                                            value="6+">
+                                        <label class="rd_btn" for="cpap_hrs_4__ID">&gt;6hrs/night</label>
+                                    </div>
+                                </fieldset>
+                            </div>
                         </div>
                     </div>
                     <div class="formgroup right">
