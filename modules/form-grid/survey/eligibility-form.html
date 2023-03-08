@@ -7,7 +7,7 @@
                         <div class="questiongroup ">
                             <fieldset class="">
                                 <span class="question">1. What is your age?</span>
-                                <input class="formcontrol" type="number" min="35" max="65" name="age" placeholder="" required />
+                                <input class="formcontrol" type="number" name="age" placeholder="" required />
                             </fieldset>
                         </div>
                     </div>
@@ -130,18 +130,11 @@
         function F__ID() {
             VmInclude: '__HOST__/assets/js/form.01.js'
             //---------------------------------------
-            var N = 1;
-            var current_I = 1;
-            var contact_ready = false;
-            var notelig=0;
-            //---------------------------------------
             //m.before_submit = function (data, index) {
             //return true;
             //}
             //---------------------------------------
             $('#D__ID').on('load', function () {
-                notelig=0;
-
                 if ($("#F__ID input[name=cpap]:checked").val() == 'Y') {
                     $('#S1_3a__ID').show();
                     $('#F__ID input[name=cpap_hrs]').prop('required', 'true');
@@ -187,28 +180,31 @@
             });
             //---------------------------------------
             $('#F__ID button').on('click', function (event) {
-                    $('#F__ID *').removeAttr('disabled');
-                    old_submit(event);
+                if (parseInt($("input[name='age']").val()) <18 || parseInt($("input[name='age']").val())>65 || 
+                        $("input[name='cpap']:checked").val() == 'N' || 
+                        ($("input[name='cpap']:checked").val() == 'Y' && 
+                        $("input[name='cpap_hrs']:checked").val() == '0-2' || $("input[name='cpap_hrs']:checked").val() == '2-4') ||
+                        $("input[name='withdraw']:checked").val() == 'N' ||
+                        $("input[name='sydney']:checked").val() == 'N' ||
+                        ($("input[name='sydney']:checked").val() == 'Y' && 
+                        $("input[name='visit']:checked").val() == 'N' || $("input[name='cannula']:checked").val() == 'N')) 
+                    {
+                        $('#F__ID *').removeAttr('disabled');
+                        old_submit(event);
+                        if (m.prefix == undefined) { $vm.load_module('not_elig1', '', {}); }
+                        else $vm.load_module(m.prefix + 'not_elig1', '', {});
+                    }
+                    else {
+                        $('#F__ID *').removeAttr('disabled');
+                        old_submit(event);
+                    if (m.prefix == undefined) { $vm.load_module('contact-form', '', {}); }
+                        else $vm.load_module(m.prefix + 'contact-form', '', {});
+                    }
             })
             //---------------------------------------
             var old_submit = m.submit;
             m.submit = function (event) {
-                event.preventDefault();
-                if ($("input[name='cpap']:checked").val() == 'N' || 
-                ($("input[name='cpap']:checked").val() == 'Y' && 
-                    $("input[name='cpap_hrs']:checked").val() == '0-2' || $("input[name='cpap_hrs']:checked").val() == '2-4') ||
-                    $("input[name='withdraw']:checked").val() == 'N' ||
-                    $("input[name='sydney']:checked").val() == 'N' ||
-                    ($("input[name='sydney']:checked").val() == 'Y' && 
-                    $("input[name='visit']:checked").val() == 'N' || $("input[name='cannula']:checked").val() == 'N')
-                    ) {
-                        if (m.prefix == undefined) { $vm.load_module('not_elig1', '', {}); }
-                        else $vm.load_module(m.prefix + 'not_elig1', '', {});
-                }
-                else {
-                    if (m.prefix == undefined) { $vm.load_module('contact-form', '', {}); }
-                    else $vm.load_module(m.prefix + 'contact-form', '', {});
-                }
+                //event.preventDefault();
             }
         }
     </script>

@@ -17,7 +17,7 @@ body{background-size: cover; background-repeat: repeat-x; background-position: c
     }
 
   .header {
-    max-width:600px;
+    max-width:700px;
     margin-left:auto;
     margin-right:auto;
     text-align: center;
@@ -27,7 +27,7 @@ body{background-size: cover; background-repeat: repeat-x; background-position: c
 
   }
   .footer{
-    max-width:600px;
+    max-width:700px;
     margin-left:auto;
     margin-right:auto;
     text-align: center;
@@ -52,7 +52,7 @@ body{background-size: cover; background-repeat: repeat-x; background-position: c
   .main-container{
     color:rgb(0, 0, 0);
     text-align: center;
-    max-width:600px;
+    max-width:700px;
     margin-left:auto;
     margin-right:auto;
     font-family: 'Nunito Sans';
