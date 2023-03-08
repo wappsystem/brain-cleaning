@@ -1,5 +1,5 @@
 #D__ID .bg{
-  background-image: url('../images/shutterstock_1890677452_small.png');
+  /*background-image: url('../images/shutterstock_1890677452_small.png');*/
   height:100%;
   position: relative;
   opacity: 1;
@@ -41,9 +41,9 @@ padding:10px
   padding-top: 10px;
 }
 #D__ID .footer-logo{
-  display:flex;
   display: grid;
   grid-template-columns: auto auto;
+  align-items: center;
 }
 #D__ID .logo-l{
   text-align: -webkit-center;
