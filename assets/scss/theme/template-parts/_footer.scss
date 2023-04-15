@@ -1,0 +1,49 @@
+#footer {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: top right;
+	padding: 50px 0;
+
+	@include breakpoint(xl) {
+		min-height: 403px;
+	}
+
+	.footer-top {
+		margin-bottom: 50px;
+
+		@include breakpoint(lg) {
+			margin-bottom: 70px;
+		}
+
+		@include breakpoint(xl) {
+			margin-bottom: 105px;
+		}
+	}
+
+	.footer-image-lists {
+		@include breakpoint(md) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin: 0 -20px;
+		}
+
+		.image-list {
+			margin-bottom: 30px;
+			text-align: center;
+
+			@include breakpoint(md) {
+				margin-bottom: 0;
+				padding: 0 20px;
+				max-width: 33.33%;
+			}
+		}
+	}
+
+	.footer-bottom {
+		color: $white;
+		@include breakpoint(lg) {
+			line-height: 1.9375;
+		}
+	}
+}

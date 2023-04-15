@@ -1,0 +1,14 @@
+.content-block {
+	line-height: 1.5;
+	.h4 {
+		margin-bottom: 40px;
+		line-height: 1.4166667;
+	}
+
+	p {
+		font-weight: 400;
+		@include breakpoint(lg) {
+			font-size: 20px;
+		}
+	}
+}

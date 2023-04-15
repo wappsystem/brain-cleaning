@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Brain Cleaning</title>
+	<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+	<link media="all" rel="stylesheet" href="style.css" >
+</head>
+<body>
+	<div id="wrapper">
+		<header id="header">
+			<div class="container">
+				<div class="logo">
+					<a href="#">
+						<img src="assets/images/logo.png" alt="Brain Cleaning" width="234" height="85">
+					</a>
+				</div>
+			</div>
+		</header>
+
+		<main id="main">
+			<section class="inner-banner" style="background-image:url('assets/images/inner-banner.png');">
+				<div class="container">
+				</div>
+			</section>
+
+			<section class="section form-block p-large">
+				<div class="container">
+					<div class="heading-block text-center">
+						<h2>Brain Cleaning Questionnaire</h2>
+						<p>Please answer the following questions.</p>
+					</div>
+
+					<div class="form-wrap">
+						<div class="form-group">
+							<label for="age">1. What is your age?</label>
+							<input type="text" id="age">
+						</div>
+
+						<div class="form-group">
+							<label for="fluent-english">2. Are you fluent in english?</label>
+							<div class="form-radio-group">
+								<div class="radio-wrap">
+									<input type="radio" id="yes" name="fluent-english" value="yes" checked />
+									<label for="yes">Yes</label>
+								</div>
+								<div class="radio-wrap">
+									<input type="radio" id="no" name="fluent-english" value="no" />
+									<label for="no">No</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="sydney-region">3. Do you live in the greater Sydney Region of NSW?</label>
+							<div class="form-radio-group">
+								<div class="radio-wrap">
+									<input type="radio" id="yes1" name="sydney-region" value="yes" checked />
+									<label for="yes1">Yes</label>
+								</div>
+								<div class="radio-wrap">
+									<input type="radio" id="no1" name="sydney-region" value="no" />
+									<label for="no1">No</label>
+								</div>
+							</div>
+
+							<div class="form-sub-group">
+								<label for="travel">a. If yes, are you willing to travel and stay for a 30-hour research visit at the Woolcock Institute in Glebe on two occasions that are 2 -weeks apart?</label>
+								<div class="form-radio-group">
+									<div class="radio-wrap">
+										<input type="radio" id="yes2" name="travel" value="yes" checked />
+										<label for="yes2">Yes</label>
+									</div>
+									<div class="radio-wrap">
+										<input type="radio" id="no2" name="travel" value="no" />
+										<label for="no2">No</label>
+									</div>
+								</div>
+							</div>
+
+							<div class="form-sub-group">
+								<label for="stay">b. If yes, Are you willing to have a plastic cannula inserted into your arm for blood collection for 24hrs during each of your stays?</label>
+								<div class="form-radio-group">
+									<div class="radio-wrap">
+										<input type="radio" id="yes3" name="stay" value="yes" checked />
+										<label for="yes3">Yes</label>
+									</div>
+									<div class="radio-wrap">
+										<input type="radio" id="no3" name="stay" value="no" />
+										<label for="no3">No</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="osa">4. Are you currently using a CPAP machine for Obstructive Sleep Apnoea (OSA)?</label>
+							<div class="form-radio-group">
+								<div class="radio-wrap">
+									<input type="radio" id="yes4" name="osa" value="yes" checked />
+									<label for="yes4">Yes</label>
+								</div>
+								<div class="radio-wrap">
+									<input type="radio" id="no4" name="osa" value="no" />
+									<label for="no4">No</label>
+								</div>
+							</div>
+
+							<div class="form-sub-group">
+								<label for="night-hour">a. If yes how many hrs/night</label>
+								<div class="form-radio-group">
+									<div class="radio-wrap">
+										<input type="radio" id="0-2hrs" name="night-hour" value="0-2hrs" checked />
+										<label for="0-2hrs">0-2hrs/night</label>
+									</div>
+									<div class="radio-wrap">
+										<input type="radio" id="2-4hrs" name="night-hour" value="2-4hrs" />
+										<label for="2-4hrs">2-4hrs/night</label>
+									</div>
+									<div class="radio-wrap">
+										<input type="radio" id="4-6hrs" name="night-hour" value="4-6hrs" />
+										<label for="4-6hrs">4-6hrs/night</label>
+									</div>
+									<div class="radio-wrap">
+										<input type="radio" id="6plus" name="night-hour" value="6plus" />
+										<label for="6plus">>6hrs/night</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label for="cpac">5. Are you willing to temporarily withdraw from CPAP use for 2 weeks?</label>
+							<div class="form-radio-group">
+								<div class="radio-wrap">
+									<input type="radio" id="yes5" name="cpac" value="yes" checked />
+									<label for="yes5">Yes</label>
+								</div>
+								<div class="radio-wrap">
+									<input type="radio" id="no5" name="cpac" value="no" />
+									<label for="no5">No</label>
+								</div>
+							</div>
+						</div>
+						<div class="submit-wrap">
+							<input type="submit" value="submit" class="btn">
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer id="footer" style="background-image: url('assets/images/footer-bg.jpg');">
+			<div class="footer-top">
+				<div class="container">
+					<div class="footer-image-lists">
+						<div class="image-list">
+							<div class="img-wrap">
+								<img src="assets/images/icon1.png" alt="image description" width="196" height="70">
+							</div>
+						</div>
+						<div class="image-list">
+							<div class="img-wrap">
+								<img src="assets/images/icon2.png" alt="image description" width="290" height="56">
+							</div>
+						</div>
+						<div class="image-list">
+							<div class="img-wrap">
+								<img src="assets/images/icon3.png" alt="image description" width="209" height="61">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-bottom text-center">
+				<div class="container">
+					<p>Woolcock Institute of Medical Research Copyright &copy; 2023.</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+
+	<script src="assets/dist/js/jquery-3.6.0.min.js"></script>
+	<script src="assets/dist/js/brain-clean-bundle.js"></script>
+</body>
+</html>

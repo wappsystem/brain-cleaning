@@ -1,0 +1,130 @@
+.pagination {
+	// display: flex;
+	display: block;
+	align-items: center;
+	// justify-content: center;
+	padding-top: 33px;
+
+	@include breakpoint(lg) {
+		padding-top: 60px;
+	}
+
+	.page-item {
+		margin-bottom: 0;
+		display: inline-block;
+		align-items: center;
+		vertical-align: top;
+		margin-bottom: 10px;
+
+		@include breakpoint(md) {
+			margin-bottom: 0;
+		}
+
+		&:first-child,
+		&:last-child {
+			.page-link {
+				border: none;
+			}
+		}
+
+		&.active {
+			.page-numbers,
+			.page-link {
+				background: linear-gradient(180deg, #2BE72A 0%, #019B00 100%);
+				// color: $white !important;
+			}
+		}
+
+		& + .page-item {
+			margin-left: 8px;
+		}
+
+		.page-numbers,
+		.page-link {
+			width: 32px;
+			height: 32px;
+			border-radius: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font: italic 600 24px/1.3333 $font-family-secondary;
+			padding: 4px 5px;
+			color: $black;
+			border: none;
+			transition: 0.3s ease;
+
+			&:focus {
+				box-shadow: none;
+			}
+
+			&:hover {
+				background: linear-gradient(180deg, #2BE72A 0%, #019B00 100%);
+			}
+		}
+
+		&.prev,
+		&.next {
+			a {
+				font-size: 0;
+				&:before {
+					content: "";
+					background: url('assets/images/icon-arrow-right.svg') no-repeat;
+					background-size: 100%;
+					width: 24px;
+					height: 24px;
+					display: block;
+					// opacity: 0.6;
+					transition: 0.3s ease;
+				}
+
+				&:hover {
+					// background: linear-gradient(180deg, #2BE72A 0%, #019B00 100%);
+					background: transparent;
+
+					&:before {
+						background-image: url('assets/images/icon-arrow-right-green.svg');
+					}
+				}
+			}
+
+
+		}
+
+		&.prev {
+			transform: rotate(180deg);
+			&:before {
+
+			}
+		}
+
+		.prev,
+		.next {
+			font-size: 0;
+			&:before {
+				content: "";
+				background: url('assets/images/icon-arrow-right.svg') no-repeat;
+				background-size: 100%;
+				width: 24px;
+				height: 24px;
+				display: block;
+				// opacity: 0.6;
+				transition: 0.3s ease;
+			}
+
+			&:hover {
+				// background: linear-gradient(180deg, #2BE72A 0%, #019B00 100%);
+				background: transparent;
+
+				&:before {
+					background-image: url('assets/images/icon-arrow-right-green.svg');
+				}
+			}
+		}
+
+		.prev {
+			&:before {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}

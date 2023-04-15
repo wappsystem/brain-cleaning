@@ -1,0 +1,186 @@
+.content-box-block {
+	.container {
+		max-width: 1170px;
+	}
+
+	.short-text {
+		max-width: 727px;
+		margin: 0 auto;
+		font-size: 13px;
+		line-height: 1.538461;
+		text-align: center;
+
+		p {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.content-box {
+	position: relative;
+	border-radius: 16px;
+	overflow: hidden;
+	padding-bottom: 470px;
+	margin-bottom: 58px;
+	@include breakpoint(md) {
+		padding-bottom: 0;
+	}
+
+	&:only-child {
+		margin-bottom: 0;
+	}
+
+	> img {
+		position: absolute;
+		bottom: -40px;
+		left: 50%;
+		max-height: 500px;
+		width: auto;
+		transform: translateX(-50%);
+
+		@include breakpoint(md) {
+			left: -35px;
+			transform: none;
+			max-height: 100%;
+		}
+	}
+
+	&-wrap {
+		padding: 40px 20px;
+		line-height: 1.5;
+
+		@include breakpoint(md) {
+			padding-left: 20%;
+			padding-right: 10%;
+		}
+
+		@include breakpoint(xl) {
+			font-size: 20px;
+			padding-left: 17%;
+		}
+
+		@include breakpoint(xxl) {
+			padding-right: 15%;
+		}
+
+		h2 {
+			font-weight: 600;
+			margin-bottom: 20px;
+			@include breakpoint(xl) {
+				font-size: 32px;
+				margin-bottom: 40px;
+			}
+		}
+
+		.text-small {
+			@include breakpoint(lg) {
+				font-size: 18px;
+			}
+		}
+
+		p {
+			margin-bottom: 20px;
+
+			// @include breakpoint(lg) {
+			// 	margin-bottom: 20px;
+			// }
+
+			@include breakpoint(xl) {
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	form {
+		// margin-bottom: 37px;
+		margin-bottom: 27px;
+		margin-top: 30px;
+		.radio-wrap {
+			margin-bottom: 10px;
+			&:last-child {
+				margin-right: 0;
+			}
+
+			input[type=radio] {
+				& + label {
+					font-size: 15px;
+					color: $pink;
+					background: $white;
+					letter-spacing: 0.05em;
+					padding: 10px 12px;
+					border: none;
+
+					@media only screen and (min-width: 375px){
+						padding: 10px 16px;
+					}
+
+					@include breakpoint(md) {
+						min-width: 220px;
+					}
+				}
+
+				&:checked + label {
+					color: $white;
+					background: $pink;
+					border-color: $pink;
+				}
+			}
+		}
+	}
+
+	.btn-wrap {
+		margin-bottom: 27px;
+		margin-top: 30px;
+		.btn {
+			font-size: 15px;
+			padding: 10px 16px;
+			border: none;
+			margin-right: 15px;
+			font-weight: 500;
+
+			@media only screen and (max-width: 374px){
+				padding: 10px 12px;
+				letter-spacing: 0.02em;
+				min-width: 112px;
+			}
+
+			@include breakpoint(md) {
+				min-width: 220px;
+			}
+
+			&-no {
+				background: $white;
+				color: $pink;
+				margin-right: 0;
+			}
+		}
+	}
+
+	.no-info {
+		font-size: 16px;
+		display: none;
+		margin: -6px 0 20px;
+
+		p {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		strong {
+			font-weight: 600;
+		}
+	}
+
+	.short-desc {
+		font-size: 13px;
+		line-height: 1.307692;
+
+		p {
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,126 @@
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    color: $text;
+
+    &.nav-active {
+        overflow: hidden;
+    }
+}
+
+#wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    // height: 100%;
+    min-height: 100%;
+}
+
+a {
+    transition: 0.3s ease;
+    color: $text;
+    text-decoration: none;
+
+    &:hover {
+        color: $primary;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-wrap {
+    a {
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+// sections
+.section {
+    padding: 40px 0;
+
+    @include breakpoint(md) {
+        padding: 60px 0;
+    }
+
+    @include breakpoint(xl) {
+        padding: 80px 0;
+    }
+
+    &.p-small {
+        padding: 37px 0;
+
+        @include breakpoint(md) {
+            padding: 55px 0;
+        }
+
+        @include breakpoint(xl) {
+            padding: 60px 0;
+        }
+    }
+
+    &.p-large {
+        // padding: 50px 0;
+        padding: 40px 0;
+
+        @include breakpoint(md) {
+            padding: 70px 0;
+        }
+
+        @include breakpoint(xl) {
+            padding: 120px 0;
+        }
+    }
+
+    &.p-xlarge {
+        padding: 60px 0;
+        padding: 40px 0;
+
+        @include breakpoint(md) {
+            padding: 80px 0;
+        }
+
+        @include breakpoint(xl) {
+            padding: 160px 0;
+        }
+    }
+}
+
+.container {
+    padding: 0 15px;
+    max-width: 100%;
+
+    @include breakpoint(lg) {
+        max-width: 1180px;
+    }
+}
+
+.container-small {
+    // max-width: 945px;
+    max-width: 910px;
+}
+
+.screen-reader-text {
+    display:none;
+}
+
+.col {
+    flex-basis: inherit;
+}
+
+.link {
+    color: $primary;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.bg-dawn-pink {
+    background: $dawn-pink;
+}

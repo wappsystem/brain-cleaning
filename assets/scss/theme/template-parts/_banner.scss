@@ -1,0 +1,70 @@
+.banner {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom left;
+	min-height: 530px;
+	display: flex;
+	align-items: center;
+
+	@include breakpoint(lg) {
+		background-position: bottom center;
+	}
+
+	@include breakpoint(xxl) {
+		background-position: bottom right;
+	}
+
+	.banner-text {
+		color: $white;
+		max-width: 700px;
+		text-align: center;
+		padding: 130px 0;
+
+		@include breakpoint(xxl) {
+			margin-left: -60px;
+		}
+
+		h1 {
+			&:only-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.inner-banner {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom center;
+	min-height: 200px;
+	display: flex;
+	align-items: center;
+
+	@include breakpoint(xxl) {
+		background-position: bottom right;
+	}
+
+	@include breakpoint(md) {
+		min-height: 300px;
+	}
+
+	@include breakpoint(lg) {
+		min-height: 376px;
+	}
+
+	@include breakpoint(xl) {
+		min-height: 495px;
+	}
+
+	.banner-text {
+		color: $white;
+		max-width: 700px;
+		text-align: center;
+
+		h1 {
+			&:only-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

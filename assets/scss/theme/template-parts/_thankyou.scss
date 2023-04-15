@@ -1,0 +1,129 @@
+.thankyou-block {
+	&.no-eligible {
+		@include breakpoint(xl) {
+			padding-bottom: 150px;
+		}
+	}
+
+	&.eligible {
+		@include breakpoint(xl) {
+			padding-bottom: 100px;
+		}
+	}
+
+	.thankyou-text {
+		text-align: center;
+		margin: 0 auto 60px;
+		max-width: 870px;
+		line-height: 1.5;
+
+		@include breakpoint(lg) {
+			font-size: 20px;
+		}
+
+		strong {
+			font-weight: 600;
+		}
+
+		.h2 {
+			margin-bottom: 20px;
+			@include breakpoint(lg) {
+				font-size: 40px;
+				margin-bottom: 30px;
+			}
+		}
+
+		p {
+			margin-bottom: 20px;
+
+			@include breakpoint(lg) {
+				margin-bottom: 30px;
+			}
+
+			a {
+				font-weight: 600;
+				text-decoration-thickness: 1px;
+				&:hover {
+					text-decoration: underline;
+				}
+
+				&.link {
+					text-decoration: underline;
+
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+
+	.form-wrap {
+		max-width: 703px;
+		margin: 0 auto;
+		border-top: 1px solid rgba(#d0d4d6, 0.5);
+		padding: 40px 0;
+
+		.form-item-wrap {
+			@include breakpoint(md) {
+				display: flex;
+				flex-wrap: wrap;
+			}
+		}
+
+		.form-group {
+			margin-bottom: 25px;
+			@include breakpoint(md) {
+				padding: 0 12px;
+				width: 50%;
+			}
+
+			label {
+				margin-bottom: 8px;
+				font-weight: 500;
+				color: $label;
+				text-transform: uppercase;
+				font-size: 13px;
+				letter-spacing: 0.08em;
+
+				@include breakpoint(lg) {
+					letter-spacing: 0.15em;
+				}
+			}
+
+			.form-control {
+				background: #f0f4f7;
+				border-radius: 3px;
+				padding: 5px 30px;
+				border: none;
+				height: 57px;
+				font-size: 16px;
+				// letter-spacing: 0.05em;
+
+				@include placeholder() {
+					color: #92a5af;
+				}
+			}
+		}
+
+		.submit-wrap {
+			margin-top: 29px;
+			text-align: center;
+
+			input[type="submit"] {
+				background-image: url('assets/images/icon-arrow.png');
+				background-repeat: no-repeat;
+				background-size: 15px 14px;
+				background-position: center left 68%;
+				letter-spacing: 0.06em;
+				text-align: center;
+				padding: 15px 16px;
+				min-width: 100%;
+				letter-spacing: 0.15em;
+				@media only screen and (min-width: 375px){
+					min-width: 300px;
+				}
+			}
+		}
+	}
+}

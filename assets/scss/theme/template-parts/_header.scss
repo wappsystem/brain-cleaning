@@ -1,0 +1,293 @@
+#header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	padding: 15px 0;
+	z-index: 999;
+	transition: 0.3s ease;
+
+	@include breakpoint(lg) {
+		padding: 32px 0;
+	}
+
+	// .sticky & {
+	// 	background: $white;
+	// }
+
+	.container {
+		position: relative;
+	}
+
+	.logo {
+		position: relative;
+		z-index: 10;
+		max-width: 200px;
+
+		@include breakpoint(lg) {
+			max-width: 220px;
+		}
+	}
+}
+
+#nav {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	transition: 0.3s ease;
+
+	@include breakpoint(xl) {
+		right: 0;
+	}
+
+	.drop {
+		background: $white;
+		padding-top: 85px;
+		padding-bottom: 20px;
+		margin-top: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		transform: translateY(-100%);
+		// transition: transform 0.3s linear;
+		transition: transform 0.5s linear;
+		overflow: hidden;
+		height: 100vh;
+
+		@include breakpoint(md) {
+			padding-bottom: 30px;
+		}
+
+		@include breakpoint(xxl) {
+			padding-bottom: 48px;
+		}
+
+		.inner-drop {
+			height: 100%;
+			overflow-y: auto;
+			overflow-x: hidden;
+		}
+
+		&-wrap {
+			max-width: 1280px;
+			// padding: 0 15px;
+			margin: 0 auto;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			// padding: 80px 20px 30px;
+			padding: 80px 20px 0;
+
+			@include breakpoint(md) {
+				max-width: 720px;
+			}
+
+			@include breakpoint(lg) {
+				max-width: 960px;
+			}
+
+			@include breakpoint(xl) {
+				max-width: 1140px;
+			}
+
+			@include breakpoint(xxl) {
+				// padding: 130px 0 48px;
+				padding: 130px 0 0;
+				max-width: 1280px;
+			}
+
+			> ul {
+				@extend %listreset;
+				column-count: 2;
+				text-align: center;
+				// max-width: 960px;
+				max-width: 990px;
+				margin: 0 auto;
+				text-transform: uppercase;
+				width: 100%;
+
+				@include breakpointMax(lg) {
+					// width: 100%;
+				}
+
+				li {
+					margin-bottom: 30px;
+					@include breakpoint(xxl) {
+						margin-bottom: 56px;
+					}
+
+					a {
+						color: $text;
+						font-family: $font-family-secondary;
+						font-weight: 500;
+						font-size: 22px;
+						line-height: 1.4;
+
+						@include breakpoint(lg) {
+							font-size: 50px;
+						}
+
+						@include breakpoint(xxl) {
+							font-size: 72px;
+						}
+
+						&:hover {
+							color: $primary;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.nav-opener{
+	position: absolute;
+	top: 0;
+	// right: 15px;
+	right: 5px;
+	width: 54px;
+	height: 48px;
+	z-index: 9;
+	text-indent: -9999px;
+	overflow: hidden;
+	outline: none;
+	border-radius: 0;
+	background: $primary;
+
+	@include breakpoint(lg) {
+		right: 15px;
+	}
+
+	.nav-active & {
+		background: transparent;
+	}
+
+	&:before,
+	&:after,
+	span{
+		position: absolute;
+		top: 20px;
+		left: 12px;
+		height: 2px;
+		width: 32px;
+		background: $white;
+		transition: transform 0.3s ease;
+	}
+
+	span {
+		display: none;
+	}
+
+	&:before,
+	&:after{
+		content:"";
+	}
+
+	&:after{
+		top: 28px;
+	}
+
+	// &:hover{
+	// 	&:before,
+	// 	&:after,
+	// 	span {
+	// 		background: $gray;
+	// 	}
+	// }
+
+	&:hover {
+		opacity: 0.9;
+		span {
+			border: none;
+		}
+	}
+}
+
+.nav-close{
+	position: absolute;
+	top: 15px;
+	// right: 25px;
+	right: 39px;
+	width: 22px;
+	height: 22px;
+	text-indent: -9999px;
+	overflow: hidden;
+	outline: none;
+
+	&:before,
+	&:after{
+		content:"";
+		position: absolute;
+		top: 9px;
+		left: 0;
+		height: 3px;
+		width: 100%;
+		border-radius: 50px;
+		background: $text;
+		transition: transform 0.3s ease;
+
+		@include breakpoint(lg) {
+			display: none;
+		}
+	}
+
+	&:before{
+		transform: rotate(-45deg);
+	}
+
+	&:after{
+		transform: rotate(45deg);
+	}
+
+	// &:hover{
+	// 	&:before,
+	// 	&:after,
+	// 	span {
+	// 		background: $gray;
+	// 	}
+	// }
+}
+
+.nav-active{
+	&.sticky {
+		.nav-opener {
+			box-shadow: none;
+		}
+	}
+
+	#nav {
+		.drop {
+			// display: block;
+			transform: translateY(0);
+		}
+	}
+
+	.nav-opener {
+		// background: $primary;
+
+		&:before,
+		&:after,
+		span {
+			left: 14px;
+			top: 24px;
+			width: 28px;
+			background: $text;
+		}
+
+		span {
+			opacity: 0;
+		}
+
+		&:before {
+			transform: rotate(-45deg);
+		}
+
+		&:after {
+			transform: rotate(45deg);
+		}
+	}
+}

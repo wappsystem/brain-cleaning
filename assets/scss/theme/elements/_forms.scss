@@ -1,0 +1,263 @@
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="color"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="range"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+input[type="range"],
+input[type="file"],
+textarea {
+    @extend .form-control;
+    height: 44px;
+    border: 2px solid $border-color;
+    background: $white;
+    color: $text;
+    border-radius: 4px !important;
+    padding: 5px 15px;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+        border: 2px solid $border-color;
+        background: $white;
+    }
+
+    @include placeholder() {
+        // color: rgba($grey-500, 0.8);
+
+    }
+}
+
+textarea {
+    height: 109px;
+    padding-top: 17px;
+    resize: none;
+    border: 1px solid $border-color !important;
+    border-radius: 0;
+
+    &:focus {
+        outline: none !important;
+        box-shadow: none !important;
+        border: 1px solid $border-color !important;
+        background: $white;
+    }
+
+    @include placeholder() {
+
+    }
+}
+
+.ginput_container_select,
+.select-wrap {
+    position: relative;
+    border: none;
+    // height: 60px !important;
+    background: transparent !important;
+    // border: 1px solid $grey-40 !important;
+    border-radius: 0 !important;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        width: 8px;
+        height: 8px;
+        background: transparent;
+        border-width: 2px 2px 0 0;
+        border-color: $primary $primary transparent transparent;
+        border-style: solid;
+        transform: translateY(-50%) rotate(136deg);
+        margin-top: -1px;
+    }
+
+    select {
+        color: rgba($text, 0.8);
+        border: none;
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding: 16px 50px 16px 16px;
+        height: 100%;
+        text-indent: 0 !important;
+        background: transparent;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.323125;
+
+        &:focus {
+            outline: none;
+            border: none;
+        }
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+}
+
+// input[type=radio] {
+//     & + label {
+//         padding: 0 0 0 36px;
+//         display: inline-block;
+//         vertical-align: middle;
+//         cursor: pointer;
+//         position: relative;
+//         margin-bottom: 0;
+//         line-height: rem-calc(24);
+//         left: 0px;
+//         top: 0;
+//         white-space: normal;
+//         width: 100%;
+//         color: $black;
+
+//         // @include breakpoint(md) {
+//         //     font-size: 18px;
+//         // }
+
+//         &:after,
+//         &:before {
+//             position: absolute;
+//             left: 0;
+//             top: 0;
+//         }
+
+//         &:before {
+//             content: "";
+//             width: 24px;
+//             height: 24px;
+//             border-radius: 50%;
+//             border: 1px solid $border-color;
+//             background: $white;
+//         }
+
+//         &:after {
+//             content: "";
+//             width: 16px;
+//             height: 16px;
+//             border-radius: 50%;
+//             background: $primary;
+//             top: 4px;
+//             left: 4px;
+//             opacity: 0;
+//             @include transition(opacity, .3s, linear);
+//         }
+
+//     }
+
+//     &:checked + label {
+//         &:before {
+//             border: 2px solid $primary;
+//         }
+//         &:after {
+//             opacity: 1;
+//         }
+//     }
+// }
+
+input[type=checkbox] {
+    display: none;
+    & +label {
+        padding: 1px 0 0 37px;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+        position: relative;
+        margin-bottom: 0;
+        width: auto;
+        left: 0;
+        top: 0;
+        white-space: normal;
+        width: 100%;
+        color: $text;
+
+        &:after,
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 3px;
+        }
+
+        &:before {
+           content: "";
+            width: 24px;
+            height: 24px;
+            border-radius: 0;
+            border: 1px solid $border-color;
+            // background: $black-100;
+            background: transparent;
+            @include transition(all, .3s, linear);
+        }
+
+        &:after {
+            content: "";
+            background: $primary;
+            opacity: 0;
+            width: 14px;
+            height: 10px;
+            background:url('assets/images/icon-tick-white.svg') no-repeat;
+            background-size: 11px 9px;
+            top: 11px;
+            left: 7px;
+            @include transition(opacity, .3s, linear);
+        }
+    }
+
+    &:checked + label {
+        &:before {
+            border-color: $primary;
+            background: $primary;
+        }
+        &:after {
+            opacity: 1;
+        }
+    }
+}
+
+.radio-wrap {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 11px;
+
+    input[type=radio] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        border-radius: 3px;
+
+        & + label {
+            color: $fade-blue;
+            border: 2px solid $border-color;
+            padding: 8px 16px;
+            text-transform: uppercase;
+            font-weight: 500;
+            border-radius: 3px;
+            font-size: 14px;
+            min-width: 113px;
+            text-align: center;
+        }
+
+        &:checked + label {
+            color: $white;
+            background: $pink;
+            border-color: $pink;
+        }
+    }
+}
+
+.form-check {
+    padding-left: 0;
+}

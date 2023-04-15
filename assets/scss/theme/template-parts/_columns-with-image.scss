@@ -1,0 +1,61 @@
+.heading {
+	margin-bottom: 30px;
+	@include breakpoint(md) {
+		// padding-left: 45px;
+	}
+
+	@include breakpoint(lg) {
+		margin-bottom: 50px;
+	}
+
+	@include breakpoint(xxl) {
+		margin-bottom: 72px;
+	}
+	h2 {
+		background: url('assets/images/heading-bg.png') no-repeat;
+		font-family: $font-family-secondary;
+		padding: 0 15px;
+		margin-bottom: 0;
+		display: inline-block;
+		vertical-align: top;
+		// font-size: 46px;
+		background-size: cover;
+		// text-align: left;
+
+		@include breakpoint(md) {
+			background-size: contain;
+		}
+
+		@include breakpoint(lg) {
+			padding: 0 41px 0 31px;
+		}
+		@include breakpoint(xl) {
+			font-size: 46px;
+		}
+	}
+}
+
+.card-image {
+	margin-bottom: 40px;
+	.card-wrap {
+		text-align: center;
+	}
+
+	.img-wrap {
+		margin-bottom: 35px;
+		img {
+			overflow: hidden;
+			border-radius: 50%;
+		}
+	}
+
+	.text-wrap {
+		text-align: center;
+
+		h3 {
+			font-size: 24px;
+			line-height: 1.5;
+			// max-width: 200px;
+		}
+	}
+}
