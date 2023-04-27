@@ -7,7 +7,7 @@
                 if($vm.show_user!=undefined) $vm.show_user();
             })
             //------------------------------------
-            window.onmessage=function(e){
+            /*window.onmessage=function(e){
                 if(e.data.username!=undefined && e.data.token!=undefined){
                     $vm.user_name=e.data.username;
                     $vm.set_token(e.data.token,e.data.username);
@@ -16,6 +16,8 @@
                     location.reload(true);
                 }
             };
+
+            */
             //--------------------------------------------------------
             var u=window.location.origin;
             //if(u=="http://localhost:8000") u=u+"/auth.html";
