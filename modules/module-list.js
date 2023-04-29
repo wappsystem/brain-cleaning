@@ -14,10 +14,10 @@
     m[p+"contact-form"]      ={url:H+"/form-grid/survey/contact-form.html",Table:"brain-cleaning-contact"};
     
 
-    //if(window.location.toString().indexOf('tb=demo')!=-1){
+    if(window.location.toString().indexOf('tb=demo')!=-1){
         for(p in $vm.module_list){
             $vm.module_list[p].Table="demo-"+$vm.module_list[p].Table;
         }
-    //}
+    }
 
 })();
