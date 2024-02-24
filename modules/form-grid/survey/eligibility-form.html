@@ -32,10 +32,22 @@
 									<label for="no">No</label>
 								</div>
 							</div>
-						</div>
-
+                        </div>
 						<div class="form-group">
-							<label for="osa">3. Are you currently using a CPAP machine for Obstructive Sleep Apnoea (OSA)?</label>
+							<label for="osa">3. Have you been diagnosed with Obstructive Sleep Apnoea (OSA) in the last 2 years?</label>
+							<div class="form-radio-group">
+								<div class="radio-wrap">
+									<input type="radio" id="diagnosed__ID" name="diagnosed" value="Y" required />
+									<label for="diagnosed__ID">Yes</label>
+								</div>
+								<div class="radio-wrap">
+									<input type="radio" id="diagnosed2__ID" name="diagnosed" value="N" />
+									<label for="diagnosed2__ID">No</label>
+								</div>
+							</div>
+                        </div>
+						<div class="form-group">
+							<label for="osa">4. Are you currently using a CPAP machine for Obstructive Sleep Apnoea (OSA)?</label>
 							<div class="form-radio-group">
 								<div class="radio-wrap">
 									<input type="radio" id="yes4" name="cpap" value="Y" required />
@@ -46,7 +58,6 @@
 									<label for="no4">No</label>
 								</div>
 							</div>
-
 							<div class="form-sub-group" id="S1_3a__ID">
 								<label for="night-hour">a. If yes how many hrs/night</label>
 								<div class="form-radio-group">
@@ -68,31 +79,44 @@
 									</div>
 								</div>
 							</div>
+                        </div>
+						<div class="form-group">
+							<label for="osa">5. Have you been using your CPAP machine regularly for at least 5 hours each night for the last 3 months?</label>
+							<div class="form-radio-group">
+								<div class="radio-wrap">
+									<input type="radio" id="using_cpap__ID" name="using_cpap" value="Y" required />
+									<label for="using_cpap__ID">Yes</label>
+								</div>
+								<div class="radio-wrap">
+									<input type="radio" id="using_cpap2__ID" name="using_cpap" value="N" />
+									<label for="using_cpap2__ID">No</label>
+								</div>
+							</div>
 						</div>
 
 						<div class="form-group">
-							<label for="cpac">4. Are you willing to temporarily withdraw from CPAP use for 2 weeks?</label>
+							<label for="cpac">6. Are you willing to temporarily withdraw from CPAP use for 2 weeks?</label>
 							<div class="form-radio-group">
 								<div class="radio-wrap">
-									<input type="radio" id="yes5" name="withdraw" value="Y" required />
-									<label for="yes5">Yes</label>
+									<input type="radio" id="yes6" name="withdraw" value="Y" required />
+									<label for="yes6">Yes</label>
 								</div>
 								<div class="radio-wrap">
-									<input type="radio" id="no5" name="withdraw" value="N" />
-									<label for="no5">No</label>
+									<input type="radio" id="no6" name="withdraw" value="N" />
+									<label for="no6">No</label>
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="sydney-region">5. Do you live in the greater Sydney Region of NSW?</label>
+							<label for="sydney-region">7. Do you live in the greater Sydney Region of NSW?</label>
 							<div class="form-radio-group">
 								<div class="radio-wrap">
-									<input type="radio" id="yes1" name="sydney" value="Y" required />
-									<label for="yes1">Yes</label>
+									<input type="radio" id="yes7" name="sydney" value="Y" required />
+									<label for="yes7">Yes</label>
 								</div>
 								<div class="radio-wrap">
-									<input type="radio" id="no1" name="sydney" value="N" />
-									<label for="no1">No</label>
+									<input type="radio" id="no7" name="sydney" value="N" />
+									<label for="no7">No</label>
 								</div>
 							</div>
                             <div id="S1_5a__ID">
@@ -100,12 +124,12 @@
                                     <label for="travel">a. If yes, are you willing to travel and stay for a 30-hour research visit at the Woolcock Institute in Glebe on two occasions that are 2 -weeks apart?</label>
                                     <div class="form-radio-group">
                                         <div class="radio-wrap">
-                                            <input type="radio" id="yes2" name="visit" value="Y"  />
-                                            <label for="yes2">Yes</label>
+                                            <input type="radio" id="yes7a" name="visit" value="Y"  />
+                                            <label for="yes7a">Yes</label>
                                         </div>
                                         <div class="radio-wrap">
-                                            <input type="radio" id="no2" name="visit" value="N" />
-                                            <label for="no2">No</label>
+                                            <input type="radio" id="no7a" name="visit" value="N" />
+                                            <label for="no7a">No</label>
                                         </div>
                                     </div>
                                 </div>
@@ -114,12 +138,12 @@
                                     <label for="stay">b. If yes, Are you willing to have a plastic cannula inserted into your arm for blood collection for 24hrs during each of your stays?</label>
                                     <div class="form-radio-group">
                                         <div class="radio-wrap">
-                                            <input type="radio" id="yes3" name="cannula" value="Y"  />
-                                            <label for="yes3">Yes</label>
+                                            <input type="radio" id="yes7b" name="cannula" value="Y"  />
+                                            <label for="yes7b">Yes</label>
                                         </div>
                                         <div class="radio-wrap">
-                                            <input type="radio" id="no3" name="cannula" value="N" />
-                                            <label for="no3">No</label>
+                                            <input type="radio" id="no7b" name="cannula" value="N" />
+                                            <label for="no7b">No</label>
                                         </div>
                                     </div>
                                 </div>
@@ -191,6 +215,8 @@
                 if (parseInt($("input[name='age']").val()) <18 || parseInt($("input[name='age']").val())>65 || 
                         $("input[name='fluent_english']:checked").val() == 'N' || 
                         $("input[name='cpap']:checked").val() == 'N' || 
+                        $("input[name='diagnosed']:checked").val() == 'N' || 
+                        $("input[name='using_cpap']:checked").val() == 'N' ||                         
                         ($("input[name='cpap']:checked").val() == 'Y' && 
                         $("input[name='cpap_hrs']:checked").val() == '0-2' || $("input[name='cpap_hrs']:checked").val() == '2-4' /*|| $("input[name='cpap_hrs']:checked").val() == '4-6'*/) ||
                         $("input[name='withdraw']:checked").val() == 'N' ||
