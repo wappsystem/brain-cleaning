@@ -59,28 +59,46 @@
 								</div>
 							</div>
 							<div class="form-sub-group" id="S1_3a__ID">
-								<label for="night-hour">a. If yes how many hrs/night</label>
+								<label for="night-hour">A. On average, for how many hours do you use your CPAP machine at night?</label>
 								<div class="form-radio-group">
 									<div class="radio-wrap">
-										<input type="radio" id="0-2hrs" name="cpap_hrs" value="0-2" />
-										<label for="0-2hrs">0-2hrs/night</label>
+										<input type="radio" id="cpap_hrs_1__ID" name="cpap_hrs" value="5-" />
+										<label for="cpap_hrs_1__ID">Less than 5 hours per night</label>
 									</div>
 									<div class="radio-wrap">
-										<input type="radio" id="2-4hrs" name="cpap_hrs" value="2-4" />
-										<label for="2-4hrs">2-4hrs/night</label>
-									</div>
-									<div class="radio-wrap">
-										<input type="radio" id="4-6hrs" name="cpap_hrs" value="4-6" />
-										<label for="4-6hrs">4-6hrs/night</label>
-									</div>
-									<div class="radio-wrap">
-										<input type="radio" id="6plus" name="cpap_hrs" value="6+" />
-										<label for="6plus">>6hrs/night</label>
+										<input type="radio" id="cpap_hrs_2__ID" name="cpap_hrs" value="5+" />
+										<label for="cpap_hrs_2__ID">5 or more hours per night </label>
 									</div>
 								</div>
+                                <div class="form-sub-group" id="S1_3a_b__ID">
+                                    <label for="night-hour">B. On average, how many days per week do you use your CPAP machine?</label>
+                                    <div class="form-radio-group">
+                                        <div class="radio-wrap">
+                                            <input type="radio" id="cpap_days_1__ID" name="cpap_days" value="5-" />
+                                            <label for="cpap_days_1__ID">Less than 5 days per week</label>
+                                        </div>
+                                        <div class="radio-wrap">
+                                            <input type="radio" id="cpap_days_2__ID" name="cpap_days" value="5+" />
+                                            <label for="cpap_days_2__ID">5 or more days per week</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-sub-group" id="S1_3a_c__ID">
+                                        <label for="night-hour">C. Have you been using your CPAP machine consistently for the last 3 months?</label>
+                                        <div class="form-radio-group">
+                                            <div class="radio-wrap">
+                                                <input type="radio" id="cpap_consist_1__ID" name="cpap_consist" value="Y" />
+                                                <label for="cpap_consist_1__ID">Yes</label>
+                                            </div>
+                                            <div class="radio-wrap">
+                                                <input type="radio" id="cpap_consist_2__ID" name="cpap_consist" value="N" />
+                                                <label for="cpap_consist_2__ID">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 							</div>
                         </div>
-						<div class="form-group">
+						<!--<div class="form-group">
 							<label for="osa">5. Have you been using your CPAP machine regularly for at least 5 hours each night for the last 3 months?</label>
 							<div class="form-radio-group">
 								<div class="radio-wrap">
@@ -92,10 +110,10 @@
 									<label for="using_cpap2__ID">No</label>
 								</div>
 							</div>
-						</div>
+						</div>-->
 
 						<div class="form-group">
-							<label for="cpac">6. Are you willing to temporarily withdraw from CPAP use for 2 weeks?</label>
+							<label for="cpac">5. Are you willing to temporarily withdraw from CPAP use for 2 weeks?</label>
 							<div class="form-radio-group">
 								<div class="radio-wrap">
 									<input type="radio" id="yes6" name="withdraw" value="Y" required />
@@ -108,7 +126,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="sydney-region">7. Do you live in the greater Sydney Region of NSW?</label>
+							<label for="sydney-region">6. Do you live in the greater Sydney Region of NSW?</label>
 							<div class="form-radio-group">
 								<div class="radio-wrap">
 									<input type="radio" id="yes7" name="sydney" value="Y" required />
@@ -175,6 +193,25 @@
                     $('#S1_3a__ID').hide();
                     $('#F__ID input[name=cpap_hrs]').removeAttr('required');
                 }
+                //-----------------
+                if ($("#F__ID input[name=cpap_hrs]:checked").val() == '5+') {
+                    $('#S1_3a_b__ID').show();
+                    $('#F__ID input[name=cpap_days]').prop('required', 'true');
+                }
+                else {
+                    $('#S1_3a_b__ID').hide();
+                    $('#F__ID input[name=cpap_days]').removeAttr('required');
+                }
+                //-----------------
+                if ($("#F__ID input[name=cpap_days]:checked").val() == '5+') {
+                    $('#S1_3a_c__ID').show();
+                    $('#F__ID input[name=cpap_consist]').prop('required', 'true');
+                }
+                else {
+                    $('#S1_3a_c__ID').hide();
+                    $('#F__ID input[name=cpap_consist]').removeAttr('required');
+                }
+                //-----------------                
                 if ($("#F__ID input[name=sydney]:checked").val() == 'Y') {
                     $('#S1_5a__ID').show();
                     $('#F__ID input[name=visit]').prop('required', 'true');
@@ -198,6 +235,29 @@
                     $('#F__ID input[name=cpap_hrs]').removeAttr('required');
                 }
             });
+            //---------------------------------------
+            $("#F__ID input[name=cpap_hrs]").on('change', function () {
+                if ($("#F__ID input[name=cpap_hrs]:checked").val() == '5+') {
+                    $('#S1_3a_b__ID').show();
+                    $('#F__ID input[name=cpap_days]').prop('required', 'true');
+                }
+                else {
+                    $('#S1_3a_b__ID').hide();
+                    $('#F__ID input[name=cpap_days]').removeAttr('required');
+                }
+            });
+            //---------------------------------------
+            $("#F__ID input[name=cpap_days]").on('change', function () {
+                if ($("#F__ID input[name=cpap_days]:checked").val() == '5+') {
+                    $('#S1_3a_c__ID').show();
+                    $('#F__ID input[name=cpap_consist]').prop('required', 'true');
+                }
+                else {
+                    $('#S1_3a_c__ID').hide();
+                    $('#F__ID input[name=cpap_consist]').removeAttr('required');
+                }
+            });
+            //---------------------------------------
             $("#F__ID input[name=sydney]").on('change', function () {
                 if ($("#F__ID input[name=sydney]:checked").val() == 'Y') {
                     $('#S1_5a__ID').show();
@@ -214,11 +274,13 @@
             $('#F__ID button').on('click', function (event) {
                 if (parseInt($("input[name='age']").val()) <18 || parseInt($("input[name='age']").val())>65 || 
                         $("input[name='fluent_english']:checked").val() == 'N' || 
-                        $("input[name='cpap']:checked").val() == 'N' || 
                         $("input[name='diagnosed']:checked").val() == 'N' || 
-                        $("input[name='using_cpap']:checked").val() == 'N' ||                         
-                        ($("input[name='cpap']:checked").val() == 'Y' && 
-                        $("input[name='cpap_hrs']:checked").val() == '0-2' || $("input[name='cpap_hrs']:checked").val() == '2-4' /*|| $("input[name='cpap_hrs']:checked").val() == '4-6'*/) ||
+                        $("input[name='cpap']:checked").val() == 'N' || 
+                        //$("input[name='using_cpap']:checked").val() == 'N' ||                         
+                        ($("input[name='cpap']:checked").val() == 'Y' && $("input[name='cpap_hrs']:checked").val() == '5-') || 
+                        ($("input[name='cpap']:checked").val() == 'Y' && $("input[name='cpap_hrs']:checked").val() == '5+' && $("input[name='cpap_days']:checked").val() == '5-') || 
+                        ($("input[name='cpap']:checked").val() == 'Y' && $("input[name='cpap_hrs']:checked").val() == '5+' && $("input[name='cpap_days']:checked").val() == '5+' && $("input[name='cpap_consist']:checked").val() == 'N' ) || 
+                        //$("input[name='cpap_hrs']:checked").val() == '0-2' || $("input[name='cpap_hrs']:checked").val() == '2-4' /*|| $("input[name='cpap_hrs']:checked").val() == '4-6'*/) ||
                         $("input[name='withdraw']:checked").val() == 'N' ||
                         $("input[name='sydney']:checked").val() == 'N' ||
                         ($("input[name='sydney']:checked").val() == 'Y' && 
