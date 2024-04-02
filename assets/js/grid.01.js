@@ -116,9 +116,11 @@ m.render=function(){
                 value=m.records[i][b];
                 //if(b=="Submit_date") value=$vm.date_to_ddmmyyyy(value.substring(0,10));
                 if(b=="Submit_date") {
+                    value=new Date(value);
                     //value=new Date(value).toLocaleDateString(window.navigator.userLanguage || window.navigator.language);
                     //value=new Date(value).toLocaleTImeString(window.navigator.userLanguage || window.navigator.language);
-                    value=new Date(value).toLocaleString(window.navigator.userLanguage || window.navigator.language);
+                    //value=new Date(value).toLocaleString(window.navigator.userLanguage || window.navigator.language);
+                    value=new Intl.DateTimeFormat('en-AU',{day:'2-digit',month:'2-digit',year:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',}).format(value)
                 }
                 console.log(value)
             }
